@@ -130,4 +130,41 @@ body {
     font-size: 14px;
     margin-top: 10px;
     display: none;
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+        border-radius: 0;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .weather h1 {
+        font-size: 60px;
+    }
+
+    .weather h2 {
+        font-size: 35px;
+    }
+
+    .search input {
+        padding: 10px 15px;
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .search button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
 }
