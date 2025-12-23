@@ -96,10 +96,11 @@ searchBox.addEventListener("input", function () {
     if (value) {
         typingTimer = setTimeout(() => {
             const datalist = document.getElementById("city-suggestions");
-            const options = Array.from(datalist.options).map(opt => opt.value);
+            // Создаем массив значений в нижнем регистре для сравнения
+            const options = Array.from(datalist.options).map(opt => opt.value.toLowerCase());
 
-            // Если введенное значение есть в списке -> не показываем список снова
-            if (!options.includes(value)) {
+            // Если введенное значение (в нижнем регистре) есть в списке -> не показываем список
+            if (!options.includes(value.toLowerCase())) {
                 this.setAttribute("list", "city-suggestions");
             }
         }, doneTypingInterval);
