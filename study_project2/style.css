@@ -229,8 +229,84 @@ footer p {
     min-width: 150px;
 }
 
-.footer-cols li {
-    margin-bottom: 15px;
+
+/* --- MEDIA QUERIES (АДАПТИВНОСТЬ) --- */
+
+/* Если экран меньше 960px (Планшеты/Телефоны) */
+@media (max-width: 960px) {
+
+    /* 1. Делаем Hero Section компактнее */
+    h1 {
+        font-size: 2rem;
+        /* Уменьшаем заголовок с 3rem до 2rem */
+    }
+
+    .main-content {
+        padding: 0 5%;
+        /* Больше отступов по бокам */
+        margin-top: 10vh;
+        /* Поднимаем контент выше */
+    }
+
+    /* 2. Секции (TV, Mobile, Mac) ставим в колонку */
+    .feature-section,
+    .feature-section.reverse {
+        flex-direction: column;
+        /* Элементы друг под другом */
+        text-align: center;
+        /* Текст по центру */
+        padding: 40px 15px;
+    }
+
+    .feature-text {
+        padding: 0;
+        margin-bottom: 20px;
+        /* Отступ между текстом и картинкой */
+    }
+
+    .feature-text h1 {
+        font-size: 2rem;
+        text-align: center;
+        /* Заголовок теперь по центру */
+    }
+
+    .feature-text h2 {
+        font-size: 1.2rem;
+    }
+
+    /* 3. Форма Email - ставим кнопку ПОД полем ввода */
+    .email-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="email"] {
+        width: 100%;
+        /* Поле на всю ширину */
+        margin-bottom: 10px;
+        /* Отступ снизу */
+        height: 50px;
+    }
+
+    .btn-get-started {
+        width: 150px;
+        /* Кнопка поменьше */
+        height: 50px;
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    /* 4. Footer - колонки сворачиваем (по 2 в ряд) */
+    .footer-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* 2 колонки */
+        gap: 20px;
+    }
+
+    .footer-cols ul {
+        padding: 0;
+    }
 }
 
 /* --- СЕКЦИИ С КОНТЕНТОМ --- */
