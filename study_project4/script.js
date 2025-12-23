@@ -14,12 +14,16 @@ async function checkWeather(city) {
         const geoResponse = await fetch(geoUrl);
         const geoData = await geoResponse.json();
 
-        // Если город не найден
+        // Если город не найден (или пустой результат)
         if (!geoData.results) {
             document.querySelector(".error").style.display = "block";
             document.querySelector(".weather").style.display = "none";
+            logMissingQuery(city); // Логируем "потеряшку"
             return;
         }
+
+        // Прячем ошибку если всё ок
+        document.querySelector(".error").style.display = "none";
 
         const { latitude, longitude, name } = geoData.results[0];
 
@@ -73,3 +77,19 @@ searchBox.addEventListener("keypress", (event) => {
         checkWeather(searchBox.value);
     }
 });
+
+// Функция логирования отсутствующих городов (имитация записи в файл)
+function logMissingQuery(city) {
+    console.log(`📝 Logged missing city: ${city}`);
+
+    // Получаем текущий лог или создаем пустой массив
+    let missingLog = JSON.parse(localStorage.getItem('missing_queries')) || [];
+
+    // Добавляем новый запрос, если его еще нет
+    if (!missingLog.includes(city)) {
+        missingLog.push(city);
+        localStorage.setItem('missing_queries', JSON.stringify(missingLog));
+    }
+
+    console.table(missingLog); // Показываем в консоли разработчика
+}
