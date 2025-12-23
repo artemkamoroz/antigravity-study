@@ -130,27 +130,29 @@ function logMissingQuery(city) {
 }
 
 // --- Smart Back Button Logic ---
-// Если есть ошибка или введен текст -> кнопка "Back" очищает всё (сброс)
-// Если всё чисто -> кнопка "Back" возвращает в портфолио
 const backBtn = document.getElementById("btn-back");
 
 backBtn.addEventListener("click", (e) => {
+    // Проверяем, видна ли ошибка. Инлайн-стиль устанавливается в checkWeather()
     const errorVisible = document.querySelector(".error").style.display === "block";
-    const weatherVisible = document.querySelector(".weather").style.display === "block";
-    const hasInput = searchBox.value.length > 0;
 
-    // Если мы в состоянии "Поиска" или "Ошибки"
-    if (errorVisible || weatherVisible || hasInput) {
+    // Если есть ошибка -> кнопка "Back" возвращает старую карточку (New York или прошлый город)
+    // А не просто очищает всё в ноль.
+    if (errorVisible) {
         e.preventDefault(); // Не уходим со страницы
 
-        // Сбрасываем интерфейс
+        // Прячем ошибку
         document.querySelector(".error").style.display = "none";
-        document.querySelector(".weather").style.display = "none";
-        searchBox.value = "";
-        searchBox.removeAttribute("list"); // Убираем подсказки
 
-        // Возвращаем фокус в поле
+        // Возвращаем погоду (данные там остались с прошлого успешного запроса)
+        document.querySelector(".weather").style.display = "block";
+
+        // Очищаем поле, чтобы можно было искать заново
+        searchBox.value = "";
+        searchBox.removeAttribute("list");
         searchBox.focus();
     }
-    // Если условия не выполнены -> работает стандартный <a href="../index.html">
+    // Если ошибки нет (интерфейс "чистый" или "успешный") ->
+    // Ссылку <a href="../study_project1/index.html"> не трогаем.
+    // Она уведет пользователя обратно в портфолио.
 });
