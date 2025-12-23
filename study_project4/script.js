@@ -8,7 +8,7 @@ const weatherIcon = document.querySelector(".weather-icon");
 async function checkWeather(city) {
     // 1. Сначала ищем координаты города (Geocoding API)
     // https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=1&language=ru&format=json
-    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=ru&format=json`;
+    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`;
 
     try {
         const geoResponse = await fetch(geoUrl);
@@ -39,22 +39,31 @@ async function checkWeather(city) {
         document.querySelector(".humidity").innerHTML = data.current.relative_humidity_2m + "%";
         document.querySelector(".wind").innerHTML = data.current.wind_speed_10m + " km/h";
 
-        // Меняем иконку в зависимости от кода погоды (WMO code)
+        // Меняем фон и иконку в зависимости от кода погоды (WMO code)
         const code = data.current.weather_code;
+        const card = document.querySelector(".card");
+
         // Коды: 0-Sun, 1-3-Cloud, 51-67-Rain, 71-77-Snow, 95-99-Storm
+        card.style.transition = "background 0.5s ease-in-out";
 
         if (code === 0) {
             weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/869/869869.png"; // Clear Sun
+            card.style.background = "linear-gradient(135deg, #00feba, #5b548a)"; // Default Bright
         } else if (code >= 1 && code <= 3) {
             weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/1163/1163657.png"; // Clouds
+            card.style.background = "linear-gradient(135deg, #a8c0ff, #3f2b96)"; // Cloudy Purple/Blue
         } else if (code >= 51 && code <= 67) {
             weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/1163/1163627.png"; // Rain
+            card.style.background = "linear-gradient(135deg, #4b6cb7, #182848)"; // Rainy Dark Blue
         } else if (code >= 71 && code <= 77) {
             weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/642/642000.png"; // Snow
+            card.style.background = "linear-gradient(135deg, #83a4d4, #b6fbff)"; // Snowy Cold
         } else if (code >= 95) {
             weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/1146/1146860.png"; // Storm
+            card.style.background = "linear-gradient(135deg, #232526, #414345)"; // Stormy Grey
         } else {
             weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/1163/1163657.png"; // Default Cloud
+            card.style.background = "linear-gradient(135deg, #00feba, #5b548a)";
         }
 
         // Показываем блок погоды и прячем ошибку
