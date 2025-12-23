@@ -10,12 +10,15 @@
 
 /* Светлая тема (будет включаться через JS) */
 [data-theme="light"] {
-    --bg-color: #ffffff;
-    --card-bg: #f3f4f6;
-    --text-primary: #111827;
+    --bg-color: #e5e5e5;
+    /* Softer grey for less eye strain */
+    --card-bg: #ffffff;
+    /* Clean white cards */
+    --text-primary: #1f2937;
+    /* Dark grey text */
     --text-secondary: #4b5563;
-    --card-border: #e5e7eb;
-    --hover-glow: 0 0 20px rgba(99, 102, 241, 0.2);
+    --card-border: #d1d5db;
+    --hover-glow: 0 0 20px rgba(99, 102, 241, 0.15);
 }
 
 .theme-toggle {
