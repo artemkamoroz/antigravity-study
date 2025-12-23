@@ -39,6 +39,11 @@ async function checkWeather(city) {
         document.querySelector(".humidity").innerHTML = data.current.relative_humidity_2m + "%";
         document.querySelector(".wind").innerHTML = data.current.wind_speed_10m + " km/h";
 
+        // Сброс и запуск анимации иконки
+        weatherIcon.style.animation = 'none';
+        weatherIcon.offsetHeight; // trigger reflow
+        weatherIcon.style.animation = 'fadeIn 0.8s ease-in-out';
+
         // Меняем фон и иконку в зависимости от кода погоды (WMO code)
         const code = data.current.weather_code;
         const card = document.querySelector(".card");
@@ -70,8 +75,13 @@ async function checkWeather(city) {
         document.querySelector(".weather").style.display = "block";
         document.querySelector(".error").style.display = "none";
 
+        // Плавное появление карточки при первой загрузке
+        card.style.opacity = "1";
+
     } catch (error) {
         console.error("Error fetching weather:", error);
+        // Даже если ошибка сети, карточку надо показать (с сообщением об ошибке, если есть логика)
+        document.querySelector(".card").style.opacity = "1";
     }
 }
 

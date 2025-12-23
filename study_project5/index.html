@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App | Artem Morozov</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+        <h1>Simple Quiz</h1>
+
+        <div class="quiz">
+            <h2 id="question">Question goes here?</h2>
+
+            <div id="answer-buttons">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+
+            <button id="next-btn">Next</button>
+        </div>
+
+        <!-- Result Screen (Initially Hidden) -->
+        <div class="result" style="display: none;">
+            <h2>You scored <span id="score-val">0</span> out of <span id="total-val">0</span>!</h2>
+            <button id="restart-btn" class="btn-restart">Play Again</button>
+            <a href="../index.html" class="btn-back">Back to Portfolio</a>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

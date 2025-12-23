@@ -23,6 +23,10 @@ body {
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
+    opacity: 0;
+    /* Hidden by default */
+    transition: opacity 0.5s ease, background 0.5s ease-in-out;
+    /* Smooth fade-in + background change */
 }
 
 /* Back Button */
@@ -84,7 +88,7 @@ body {
 .weather-icon {
     width: 170px;
     margin-top: 30px;
-    animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
