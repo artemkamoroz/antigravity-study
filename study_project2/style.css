@@ -1,0 +1,316 @@
+/* Сброс стилей: убираем стандартные отступы браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Это важно для правильных размеров */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Фон с картинкой */
+.hero-bg {
+    height: 100vh;
+    /* 100% высоты экрана (Viewport Height) */
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
+    background-size: cover;
+    /* Растягиваем на весь экран */
+    background-position: center;
+    position: relative;
+    /* Чтобы внутри позиционировать наложение */
+}
+
+/* Черное затемнение поверх картинки, чтобы текст читался */
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    /* Полупрозрачный черный */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    /* Градиент как у Netflix */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Слой 1 (поверх картинки) */
+}
+
+/* Шапка и контент поверх затемнения */
+header,
+.main-content {
+    position: relative;
+    z-index: 2;
+    /* Слой 2 (поверх затемнения) */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+}
+
+.logo {
+    height: 40px;
+    /* Размер логотипа Netlfix */
+    fill: #e50914;
+    /* Цвет логотипа */
+}
+
+.btn-signin {
+    background-color: #e50914;
+    /* Красный Netflix */
+    color: white;
+    text-decoration: none;
+    padding: 7px 17px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.main-content {
+    text-align: center;
+    margin-top: 15vh;
+    /* Отступ сверху */
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    /* Очень крупный шрифт (48px) */
+    font-weight: 900;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin: 16px 0;
+    font-weight: 400;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Форма с полем email и кнопкой */
+.email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="email"] {
+    padding: 15px;
+    width: 400px;
+    height: 60px;
+    border: 1px solid #333;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный фон */
+    color: white;
+    font-size: 16px;
+}
+
+.btn-get-started {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    height: 60px;
+    padding: 0 30px;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* --- FAQ (ACCORDION) --- */
+.faq-section {
+    padding: 70px 45px;
+    text-align: center;
+    max-width: 815px;
+    margin: 0 auto;
+}
+
+.faq-section h1 {
+    margin-bottom: 40px;
+}
+
+.accordion {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.accordion li {
+    margin-bottom: 10px;
+}
+
+details {
+    background-color: #303030;
+    text-align: left;
+    font-size: 1.625rem;
+    cursor: pointer;
+}
+
+summary {
+    padding: 20px;
+    position: relative;
+    list-style: none;
+    /* Убираем стандартный треугольник */
+}
+
+/* Добавляем свой плюсик */
+summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+details[open] summary::after {
+    content: '×';
+    /* Меняем плюс на крестик при открытии */
+    transform: rotate(45deg);
+    /* Или можно просто повернуть */
+}
+
+.content {
+    padding: 20px;
+    border-top: 1px solid black;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.email-form-small p {
+    padding: 20px 0;
+    font-size: 1.2rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 70px 45px;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #737373;
+    font-size: 1em;
+}
+
+footer a {
+    color: #737373;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-bottom: 30px;
+}
+
+.footer-cols {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-cols ul {
+    list-style: none;
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-cols li {
+    margin-bottom: 15px;
+}
+
+/* --- СЕКЦИИ С КОНТЕНТОМ --- */
+
+/* Серая полоса-разделитель (как у Netflix) */
+.divider {
+    height: 8px;
+    background-color: #222;
+    border: none;
+}
+
+.feature-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 45px;
+    background-color: black;
+    color: white;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Класс для реверса (текст справа, картинка слева) */
+.feature-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.feature-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.feature-text h2 {
+    font-size: 1.625rem;
+    font-weight: 400;
+}
+
+.feature-img {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-img img {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Трюк с видео внутри телевизора */
+.video-overlay {
+    position: absolute;
+    top: 20%;
+    left: 13%;
+    width: 73%;
+    max-height: 54%;
+    z-index: 1;
+}
+
+.video-overlay video {
+    width: 100%;
+    height: 100%;
+}
+
+.video-overlay-mac {
+    position: absolute;
+    top: 10%;
+    left: 18%;
+    width: 63%;
+    z-index: 1;
+}
+
+.video-overlay-mac video {
+    width: 100%;
+    height: 100%;
+}

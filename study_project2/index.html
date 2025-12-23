@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="hero-bg">
+        <!-- Затемнение фона -->
+        <div class="overlay"></div>
+
+        <!-- Шапка -->
+        <header>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo"
+                class="logo">
+            <a href="#" class="btn-signin">Sign In</a>
+        </header>
+
+        <!-- Главный контент по центру -->
+        <div class="main-content">
+            <h1>Unlimited movies, TV shows, and more</h1>
+            <p class="subtitle">Watch anywhere. Cancel anytime.</p>
+            <p class="description">Ready to watch? Enter your email to create or restart your membership.</p>
+
+            <!-- Форма Email -->
+            <div class="email-form">
+                <input type="email" placeholder="Email address">
+                <button class="btn-get-started">Get Started ></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Разделитель (серая полоса) -->
+    <div class="divider"></div>
+
+    <!-- Секция 1: Enjoy on your TV -->
+    <section class="feature-section">
+        <div class="feature-text">
+            <h1>Enjoy on your TV.</h1>
+            <h2>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</h2>
+        </div>
+        <div class="feature-img">
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV">
+            <!-- Видео внутри телевизора (эмуляция) -->
+            <div class="video-overlay">
+                <video autoplay playsinline muted loop>
+                    <source
+                        src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+                        type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Секция 2: Watch everywhere (реверс) -->
+    <section class="feature-section reverse">
+        <div class="feature-text">
+            <h1>Watch everywhere.</h1>
+            <h2>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</h2>
+        </div>
+        <div class="feature-img">
+            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
+                alt="Devices">
+            <div class="video-overlay-mac">
+                <video autoplay playsinline muted loop>
+                    <source
+                        src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+                        type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Секция 3: Kids -->
+    <section class="feature-section">
+        <div class="feature-text">
+            <h1>Create profiles for kids.</h1>
+            <h2>Send kids on adventures with their favorite characters in a space made just for them—free with your
+                membership.</h2>
+        </div>
+        <div class="feature-img">
+            <a href="#"><img src="kids.png" alt="Kids"></a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h1>Frequently Asked Questions</h1>
+
+        <ul class="accordion">
+            <li>
+                <details>
+                    <summary>What is Netflix?</summary>
+                    <div class="content">
+                        Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies,
+                        anime, documentaries, and more on thousands of internet-connected devices.
+                    </div>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>How much does Netflix cost?</summary>
+                    <div class="content">
+                        Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one
+                        fixed monthly fee. Plans range from $9.99 to $19.99 a month. No extra costs, no contracts.
+                    </div>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Where can I watch?</summary>
+                    <div class="content">
+                        Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at
+                        netflix.com from your personal computer or on any internet-connected device.
+                    </div>
+                </details>
+            </li>
+        </ul>
+
+        <div class="email-form-small">
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="email-form">
+                <input type="email" placeholder="Email address">
+                <button class="btn-get-started">Get Started ></button>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Questions? Call 1-844-505-2993</p>
+        <div class="footer-cols">
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Ways to Watch</a></li>
+                <li><a href="#">Corporate Information</a></li>
+                <li><a href="#">Netflix Originals</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Redeem Gift Cards</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Speed Test</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Buy Gift Cards</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Legal Notices</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Находим все кнопки "Get Started"
+        const buttons = document.querySelectorAll('.btn-get-started');
+
+        // Для каждой кнопки добавляем "слушателя" клика
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Находим поле ввода рядом с нажатой кнопкой
+                const input = this.parentElement.querySelector('input');
+                const email = input.value;
+
+                if (email) {
+                    alert('Спасибо! Мы отправили письмо подтверждения на ' + email);
+                    input.value = ''; // Очищаем поле
+                } else {
+                    alert('Пожалуйста, введите Email!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
