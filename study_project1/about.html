@@ -1,18 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обо мне</title>
+    <title>Обо мне | Artem Morozov</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Немного обо мне</h1>
-    <p>Я будущий программист с доходом $1500!</p>
 
-    <a href="index.html"><- Вернуться на главную</a>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Artem.Dev</a>
+            <nav>
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="hero" style="min-height: 60vh; padding-top: 40px;">
+        <div class="container" style="max-width: 800px;">
+            <div class="avatar-card" style="text-align: left; transform: none; margin: 0 auto;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Обо мне 🚀</h1>
+
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;">
+                    Привет! Я Артем, мне 21 год. <br><br>
+                    Я начинающий Frontend-разработчик с большой целью: выйти на доход в <b>$1500</b> и создавать
+                    веб-интерфейсы мирового уровня.
+                    Сейчас я активно изучаю современные технологии, создаю пет-проекты (как этот сайт и клон Netflix) и
+                    прокачиваю свои навыки каждый день.
+                </p>
+
+                <h3 style="margin-bottom: 15px; color: var(--primary-color);">Мои навыки</h3>
+                <div class="tags" style="margin-bottom: 40px;">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Flexbox & Grid</span>
+                    <span>Git / GitHub</span>
+                    <span>Responsive Design</span>
+                    <span>VS Code</span>
+                    <span>English (Learning)</span>
+                </div>
+
+                <a href="index.html" class="btn btn-primary">← Вернуться на главную</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <p class="copyright">© 2025 Artem Morozov.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
