@@ -66,8 +66,10 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
-    padding: 8px 15px;
+    font-size: 14px;
+    /* Match usage in btn-signin */
+    padding: 7px 17px;
+    /* Match usage in btn-signin */
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     transition: all 0.2s;
