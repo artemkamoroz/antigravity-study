@@ -78,21 +78,37 @@ searchBox.addEventListener("keypress", (event) => {
     }
 });
 
-// --- Smart Autocomplete Logis --- 
+// --- Smart Autocomplete Logic (Debounce) --- 
+let typingTimer;
+const doneTypingInterval = 1500; // 1.5 sec delay
+
 // Убираем список, если слово введено полностью правильно
 searchBox.addEventListener("input", function () {
     const value = this.value;
-    const datalist = document.getElementById("city-suggestions");
-    const options = Array.from(datalist.options).map(opt => opt.value);
 
-    // Если введенное значение есть в списке -> убираем подсказки (скрываем список)
-    if (options.includes(value)) {
+    // 1. Сбрасываем таймер при каждом нажатии
+    clearTimeout(typingTimer);
+
+    // 2. Убираем подсказки пока пишем
+    this.removeAttribute("list");
+
+    // 3. Запускаем таймер
+    if (value) {
+        typingTimer = setTimeout(() => {
+            const datalist = document.getElementById("city-suggestions");
+            const options = Array.from(datalist.options).map(opt => opt.value);
+
+            // Если введенное значение есть в списке -> не показываем список снова
+            if (!options.includes(value)) {
+                this.setAttribute("list", "city-suggestions");
+            }
+        }, doneTypingInterval);
+    }
+});
+
+searchBox.addEventListener("click", function () {
+    if (!this.value) {
         this.removeAttribute("list");
-    } else {
-        // Иначе возвращаем список, чтобы подсказки работали
-        if (!this.getAttribute("list")) {
-            this.setAttribute("list", "city-suggestions");
-        }
     }
 });
 
