@@ -78,6 +78,24 @@ searchBox.addEventListener("keypress", (event) => {
     }
 });
 
+// --- Smart Autocomplete Logis --- 
+// Убираем список, если слово введено полностью правильно
+searchBox.addEventListener("input", function () {
+    const value = this.value;
+    const datalist = document.getElementById("city-suggestions");
+    const options = Array.from(datalist.options).map(opt => opt.value);
+
+    // Если введенное значение есть в списке -> убираем подсказки (скрываем список)
+    if (options.includes(value)) {
+        this.removeAttribute("list");
+    } else {
+        // Иначе возвращаем список, чтобы подсказки работали
+        if (!this.getAttribute("list")) {
+            this.setAttribute("list", "city-suggestions");
+        }
+    }
+});
+
 // Функция логирования отсутствующих городов (имитация записи в файл)
 function logMissingQuery(city) {
     console.log(`📝 Logged missing city: ${city}`);
