@@ -70,6 +70,18 @@ header {
     border-radius: 4px;
     font-weight: 500;
     font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    /* Automation */
+}
+
+.btn-signin:hover {
+    background-color: #f40612;
+    /* Lighter red */
+}
+
+.btn-signin:active {
+    transform: scale(0.95);
+    /* Click effect */
 }
 
 .main-content {
@@ -127,8 +139,21 @@ input[type="email"] {
     padding: 0 30px;
     font-size: 24px;
     font-weight: 500;
+    font-weight: 500;
     cursor: pointer;
     border-radius: 2px;
+    transition: background-color 0.3s, transform 0.2s;
+    /* Animation */
+}
+
+.btn-get-started:hover {
+    background-color: #f40612;
+    /* Lighter red */
+}
+
+.btn-get-started:active {
+    transform: scale(0.98);
+    /* Click effect */
 }
 
 /* --- FAQ (ACCORDION) --- */
@@ -164,6 +189,12 @@ summary {
     position: relative;
     list-style: none;
     /* Убираем стандартный треугольник */
+    transition: background-color 0.2s;
+}
+
+details:hover summary {
+    background-color: #404040;
+    /* Lighter gray on hover */
 }
 
 /* Добавляем свой плюсик */
@@ -207,10 +238,13 @@ footer a {
     color: #737373;
     text-decoration: none;
     font-size: 0.9em;
+    transition: color 0.2s;
 }
 
 footer a:hover {
     text-decoration: underline;
+    color: #b3b3b3;
+    /* Slightly lighter gray */
 }
 
 footer p {

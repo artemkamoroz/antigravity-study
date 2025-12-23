@@ -174,18 +174,73 @@
         // Находим все кнопки "Get Started"
         const buttons = document.querySelectorAll('.btn-get-started');
 
+        // Функция валидации email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Словарь распространенных опечаток
+        const typoMap = {
+            'gnail.com': 'gmail.com',
+            'gmai.com': 'gmail.com',
+            'ghail.com': 'gmail.com',
+            'mial.ru': 'mail.ru',
+            'yandeks.ru': 'yandex.ru',
+            'yandex.com': 'yandex.ru',
+            'iclud.com': 'icloud.com'
+        };
+
+        function checkTypos(email) {
+            const domain = email.split('@')[1];
+            if (!domain) return null;
+
+            if (typoMap[domain]) {
+                return typoMap[domain];
+            }
+            return null;
+        }
+
         // Для каждой кнопки добавляем "слушателя" клика
         buttons.forEach(button => {
             button.addEventListener('click', function () {
                 // Находим поле ввода рядом с нажатой кнопкой
                 const input = this.parentElement.querySelector('input');
-                const email = input.value;
+                let email = input.value;
 
-                if (email) {
+                if (!email) {
+                    alert('Пожалуйста, введите Email!');
+                } else if (!validateEmail(email)) {
+                    alert('Пожалуйста, введите корректный Email (например, name@mail.com)');
+                } else {
+                    // Проверка на опечатки
+                    const suggestion = checkTypos(email.toLowerCase());
+                    if (suggestion) {
+                        const userConfirmed = confirm(`Возможно, вы имели в виду ${suggestion}? \nНажмите "ОК", чтобы исправить, или "Отмена", чтобы оставить как есть.`);
+                        if (userConfirmed) {
+                            // Исправляем домен
+                            const name = email.split('@')[0];
+                            email = `${name}@${suggestion}`;
+                            input.value = email; // Обновляем поле
+                        }
+                    }
+
                     alert('Спасибо! Мы отправили письмо подтверждения на ' + email);
                     input.value = ''; // Очищаем поле
-                } else {
-                    alert('Пожалуйста, введите Email!');
+                }
+            });
+        });
+
+        // Добавляем поддержку Enter
+        const inputs = document.querySelectorAll('.email-form input[type="email"]');
+        inputs.forEach(input => {
+            input.addEventListener('keypress', function (event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Чтобы страница не перезагружалась (если это форма)
+                    const button = this.nextElementSibling; // Кнопка идет сразу после инпута
+                    if (button) {
+                        button.click();
+                    }
                 }
             });
         });
