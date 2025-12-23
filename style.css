@@ -136,7 +136,7 @@ h1 {
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) !important;
     border-color: rgba(168, 85, 247, 0.5);
     box-shadow: var(--hover-glow);
 }
