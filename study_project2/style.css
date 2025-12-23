@@ -253,6 +253,8 @@ footer p {
     .feature-section.reverse {
         flex-direction: column;
         /* Элементы друг под другом */
+        align-items: center;
+        /* Центрируем блоки */
         text-align: center;
         /* Текст по центру */
         padding: 40px 15px;
