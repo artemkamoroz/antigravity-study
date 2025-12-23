@@ -127,3 +127,32 @@ function logMissingQuery(city) {
 
     console.table(missingLog); // Показываем в консоли разработчика
 }
+
+// --- Smart Back Button Logic ---
+// Если есть ошибка или введен текст -> кнопка "Back" очищает всё (сброс)
+// Если всё чисто -> кнопка "Back" возвращает в портфолио
+const backBtn = document.getElementById("btn-back");
+
+backBtn.addEventListener("click", (e) => {
+    const errorVisible = document.querySelector(".error").style.display === "block";
+    const weatherVisible = document.querySelector(".weather").style.display === "block";
+    const hasInput = searchBox.value.length > 0;
+
+    // Если мы в состоянии "Поиска" или "Ошибки"
+    if (errorVisible || weatherVisible || hasInput) {
+        e.preventDefault(); // Не уходим со страницы
+
+        // Сбрасываем интерфейс
+        document.querySelector(".error").style.display = "none";
+        document.querySelector(".weather").style.display = "none";
+        searchBox.value = "";
+        searchBox.removeAttribute("list"); // Убираем подсказки
+
+        // Возвращаем фокус в поле
+        searchBox.focus();
+    } else {
+        // Если интерфейс чистый -> уходим назад в портфолио
+        e.preventDefault();
+        history.back();
+    }
+});
