@@ -57,6 +57,9 @@ header {
 .logo {
     height: 40px;
     fill: #e50914;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .btn-back {
@@ -70,8 +73,7 @@ header {
     transition: all 0.2s;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
-    margin-right: auto;
-    /* Pushes everything else to the right if using flex */
+    /* margin-right: auto; Removed for centering */
 }
 
 .btn-back:hover {
