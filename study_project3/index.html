@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List | Artem Morozov</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <a href="../index.html" class="btn-back">← Back</a>
+            <h2>To-Do List 📝</h2>
+        </div>
+
+        <!-- Input Section -->
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <!-- List Section -->
+        <ul id="list-container">
+            <!-- Tasks will appear here -->
+            <!-- Example Task (Commented out)
+            <li class="checked">Task 1 <span onclick="deleteTask(this)">×</span></li> 
+            -->
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
