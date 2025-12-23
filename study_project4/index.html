@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App | Artem Morozov</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="card">
+        <!-- Вернуться назад -->
+        <a href="#" onclick="history.back(); return false;" class="btn-back">← Back</a>
+
+        <!-- Поиск -->
+        <div class="search">
+            <input type="text" placeholder="Enter city name" spellcheck="false">
+            <button><img src="https://cdn-icons-png.flaticon.com/512/758/758651.png" alt="search"></button>
+        </div>
+
+        <!-- Погода (скрыто пока не найдем город) -->
+        <div class="weather">
+            <img src="https://cdn-icons-png.flaticon.com/512/1163/1163657.png" class="weather-icon">
+            <h1 class="temp">22°c</h1>
+            <h2 class="city">New York</h2>
+
+            <!-- Детали (Влажность и Ветер) -->
+            <div class="details">
+                <div class="col">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4148/4148460.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="https://cdn-icons-png.flaticon.com/512/704/704835.png">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

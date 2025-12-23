@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Запустить Chrome на localhost",
-            "url": "http://localhost:8080",
+            "name": "Debug Current File",
+            "url": "http://localhost:8080/${relativeFile}",
             "webRoot": "${workspaceFolder}"
         }
     ]
