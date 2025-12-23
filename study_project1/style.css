@@ -217,6 +217,10 @@ nav a:hover {
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    /* Link Reset */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .project-card:hover {
@@ -302,6 +306,10 @@ nav a:hover {
 
 .btn-link:hover {
     gap: 10px;
+}
+
+.project-card:hover .btn-link {
+    text-decoration: underline;
 }
 
 /* FOOTER */
