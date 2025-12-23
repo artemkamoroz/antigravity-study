@@ -1,63 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Мой первый сайт</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Morozova | Frontend Developer</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header>
-        <a href="index.html" class="logo">MyGoal 🚀</a>
-        <nav>
-            <a href="index.html">Главная</a>
-            <a href="about.html">Обо мне</a>
-        </nav>
+        <div class="container">
+            <a href="#" class="logo">Julia.Dev</a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <h1>Привет! Я начинаю путь к $1500</h1>
-    <h3>Мои цели:</h3>
-    <ul>
-        <li>Выучить HTML за 3 дня</li>
-        <li>Сверстать первый сайт</li>
-        <li>Заработать $1500</li>
-    </ul>
-
-    <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" alt="Coding cat" width="300">
-    <a href="about.html">Читать обо мне -></a>
-
-    <hr style="margin: 50px 0; border: 0; border-top: 1px solid #ddd;">
-
-    <h2>Мои будущие проекты:</h2>
-    <div class="cards-container">
-        <!-- Карточка 1 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Project 1">
-            <h3>Сайт кофейни</h3>
-            <p>Красивый лендинг для местного кафе с меню.</p>
-            <button>Посмотреть</button>
+    <!-- HERO SECTION -->
+    <section class="hero" id="about">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm Julia 👋</h1>
+                <h2>Frontend Developer</h2>
+                <p>I build beautiful and interactive websites. Learning to code one pixel at a time.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for avatar -->
+                <div class="avatar-circle">
+                    <span>👩‍💻</span>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Карточка 2 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Project 2">
-            <h3>To-Do List</h3>
-            <p>Приложение для списка задач на React.</p>
-            <button>Посмотреть</button>
-        </div>
+    <!-- PROJECTS SECTION -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
 
-        <!-- Карточка 3 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Project 3">
-            <h3>Магазин кроссовок</h3>
-            <p>Интернет-магазин с корзиной и оплатой.</p>
-            <button>Посмотреть</button>
+                <!-- Project 1: Netflix Clone -->
+                <article class="project-card">
+                    <div class="project-image netflix-bg">
+                        <!-- We can put a screenshot here later -->
+                        <span class="project-icon">🎬</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Netflix Clone</h3>
+                        <p>A "pixel-perfect" clone of the Netflix landing page. Features animations, mobile
+                            responsiveness, and email validation.</p>
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <a href="../study_project2/index.html" class="btn-link">View Project →</a>
+                    </div>
+                </article>
+
+                <!-- Project 2: First Website -->
+                <article class="project-card">
+                    <div class="project-image basic-bg">
+                        <span class="project-icon">🚀</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>My First Website</h3>
+                        <p>The very first website I built. Simple structure with basic HTML and CSS styling.</p>
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                        <a href="about.html" class="btn-link">View Page →</a>
+                    </div>
+                </article>
+
+            </div>
         </div>
-    </div>
-    <br><br>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <h2>Let's work together!</h2>
+            <p>Ready to turn ideas into reality.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">Telegram</a>
+                <a href="#">Email</a>
+            </div>
+            <p class="copyright">© 2025 Julia Morozova.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

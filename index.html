@@ -4,87 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Coding Journey</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 40px;
-            background: linear-gradient(90deg, #ff512f, #dd2476);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .card {
-            background: #222;
-            padding: 20px;
-            border-radius: 12px;
-            width: 300px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-            color: white;
-            border: 1px solid #333;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #dd2476;
-        }
-
-        .card h2 {
-            margin-top: 0;
-        }
-
-        .card p {
-            color: #ccc;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #dd2476;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    </style>
+    <title>Artem Morozov | Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>My Portfolio 🚀</h1>
+    <div class="hero">
+        <h1>Artem Morozov</h1>
+        <p class="subtitle">Frontend Developer & Creative Coder.<br>Building digital experiences with passion and
+            precision.</p>
+    </div>
+
     <div class="container">
+        <!-- Project 1 -->
         <a href="study_project1/index.html" class="card">
-            <h2>Project 1: Personal Site</h2>
-            <p>My first website with Flexbox cards and personal goals.</p>
-            <span class="btn">View Project</span>
+            <h2>Personal Site</h2>
+            <p>A responsive personal website showcasing goals and early experiments. Built with pure HTML & CSS.</p>
+            <span class="card-arrow">View Project &rarr;</span>
         </a>
+
+        <!-- Project 2 -->
         <a href="study_project2/index.html" class="card">
-            <h2>Project 2: Netflix Clone</h2>
-            <p>A pixel-perfect copy of the Netflix landing page with animations.</p>
-            <span class="btn">View Project</span>
+            <h2>Netflix Clone</h2>
+            <p>A pixel-perfect recreation of the Netflix landing page, featuring advanced CSS styling and interactivity.
+            </p>
+            <span class="card-arrow">View Project &rarr;</span>
         </a>
     </div>
+
+    <footer>
+        &copy; 2025 Artem Morozov. All rights reserved.
+    </footer>
 </body>
 
 </html>
