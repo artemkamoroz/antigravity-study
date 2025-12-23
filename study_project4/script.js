@@ -129,32 +129,39 @@ function logMissingQuery(city) {
     console.table(missingLog); // Показываем в консоли разработчика
 }
 
-// --- Smart Back Button Logic ---
+// --- Smart Back Button Logic (Dynamic + Fallback) ---
 const backBtn = document.getElementById("btn-back");
 
 backBtn.addEventListener("click", (e) => {
-    // Проверяем, видна ли ошибка. Инлайн-стиль устанавливается в checkWeather()
+    // 1. Проверяем, нужно ли сбрасывать интерфейс (Ошибка или текст)
     const errorVisible = document.querySelector(".error").style.display === "block";
 
-    // Если есть ошибка -> кнопка "Back" возвращает старую карточку (New York или прошлый город)
-    // А не просто очищает всё в ноль.
     if (errorVisible) {
-        e.preventDefault(); // Не уходим со страницы
+        e.preventDefault(); // Остаемся на странице
 
-        // Прячем ошибку
+        // Сброс ошибки и восстановление погоды
         document.querySelector(".error").style.display = "none";
-
-        // Возвращаем погоду (данные там остались с прошлого успешного запроса)
         document.querySelector(".weather").style.display = "block";
-
-        // Очищаем поле, чтобы можно было искать заново
         searchBox.value = "";
         searchBox.removeAttribute("list");
         searchBox.focus();
+        return; // Выходим, навигация не нужна
     }
-    // Если ошибки нет (интерфейс "чистый" или "успешный") ->
-    // Ссылку <a href="../study_project1/index.html"> не трогаем.
-    // Она уведет пользователя обратно в портфолио.
+
+    // 2. Навигация
+    e.preventDefault(); // Отменяем href, чтобы управлять процессом
+
+    // "Умный" возврат:
+    // Если есть история (мы пришли откуда-то) -> идем назад.
+    // Если истории нет (обновили страницу или открыли напрямую) -> fallback в портфолио.
+
+    // Проверка на наличие реферера (откуда пришли) и длины истории
+    if (history.length > 1 && document.referrer) {
+        history.back();
+    } else {
+        // Fallback (страховка от черного экрана)
+        window.location.href = '../study_project1/index.html';
+    }
 });
 
 // Загружаем погоду для Нью-Йорка по умолчанию при открытии
