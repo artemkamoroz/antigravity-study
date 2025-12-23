@@ -154,6 +154,13 @@ backBtn.addEventListener("click", (e) => {
     } else {
         // Если интерфейс чистый -> уходим назад в портфолио
         e.preventDefault();
-        history.back();
+
+        // Проверяем, есть ли куда возвращаться. Если нет - идем на главную принудительно.
+        if (history.length > 1 && document.referrer.includes(location.host)) {
+            history.back();
+        } else {
+            // Fallback: явно идем в главное меню
+            window.location.href = '../index.html';
+        }
     }
 });
