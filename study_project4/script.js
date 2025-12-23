@@ -156,3 +156,6 @@ backBtn.addEventListener("click", (e) => {
     // Ссылку <a href="../study_project1/index.html"> не трогаем.
     // Она уведет пользователя обратно в портфолио.
 });
+
+// Загружаем погоду для Нью-Йорка по умолчанию при открытии
+checkWeather("New York");
