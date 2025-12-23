@@ -220,6 +220,12 @@ footer {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    body {
+        justify-content: flex-start;
+        padding-top: 80px;
+        /* Make space for the fixed button */
+    }
+
     h1 {
         font-size: 2.5rem;
     }
