@@ -4,16 +4,29 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 // Шаг 2: Проверяем, была ли сохранена тема ранее
 const currentTheme = localStorage.getItem('theme');
 
-// Если тема была сохранена как 'light', включаем её сразу
-if (currentTheme === 'light') {
+// Функция включения светлой темы
+function enableLightTheme() {
     document.documentElement.setAttribute('data-theme', 'light');
-    themeToggleBtn.innerText = '🌙'; // Меняем иконку на луну
+    themeToggleBtn.innerText = '🌙';
+}
+
+// 1. Если пользователь сам выбрал светлую тему — включаем
+if (currentTheme === 'light') {
+    enableLightTheme();
+}
+// 2. Если пользователь ничего не выбирал — смотрим на час (Smart Mode 🧠)
+else if (!currentTheme) {
+    const hour = new Date().getHours();
+    // Если время от 7 утра до 19 вечера (день), включаем светлую
+    if (hour > 7 && hour < 19) {
+        enableLightTheme();
+    }
 }
 
 // Шаг 3: Добавляем "слушателя событий" (Event Listener)
 // Это как сказать кнопке: "Жди, когда на тебя кликнут"
 themeToggleBtn.addEventListener('click', () => {
-    
+
     // Смотрим, какая тема сейчас стоит
     const hasLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
 
