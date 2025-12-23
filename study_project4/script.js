@@ -151,16 +151,6 @@ backBtn.addEventListener("click", (e) => {
 
         // Возвращаем фокус в поле
         searchBox.focus();
-    } else {
-        // Если интерфейс чистый -> уходим назад в портфолио
-        e.preventDefault();
-
-        // Проверяем, есть ли куда возвращаться. Если нет - идем на главную принудительно.
-        if (history.length > 1 && document.referrer.includes(location.host)) {
-            history.back();
-        } else {
-            // Fallback: явно идем в главное меню
-            window.location.href = '../index.html';
-        }
     }
+    // Если условия не выполнены -> работает стандартный <a href="../index.html">
 });
