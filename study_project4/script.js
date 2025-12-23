@@ -7,8 +7,8 @@ const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city) {
     // 1. Сначала ищем координаты города (Geocoding API)
-    // https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=1&language=en&format=json
-    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`;
+    // https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=1&language=ru&format=json
+    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=ru&format=json`;
 
     try {
         const geoResponse = await fetch(geoUrl);
