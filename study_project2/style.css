@@ -56,9 +56,27 @@ header {
 
 .logo {
     height: 40px;
-    /* Размер логотипа Netlfix */
     fill: #e50914;
-    /* Цвет логотипа */
+}
+
+.btn-back {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: all 0.2s;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    margin-right: auto;
+    /* Pushes everything else to the right if using flex */
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
 }
 
 .btn-signin {
