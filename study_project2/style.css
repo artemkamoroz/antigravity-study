@@ -311,6 +311,60 @@ footer p {
     }
 }
 
+/* Mobile specific styles (< 600px) */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+        /* Smaller header padding */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        /* Smaller hero title */
+    }
+
+    .main-content {
+        margin-top: 5vh;
+        /* Less space from top */
+    }
+
+    .btn-signin {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .email-form {
+        width: 100%;
+    }
+
+    input[type="email"] {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .btn-get-started {
+        height: 45px;
+        font-size: 18px;
+        width: 100%;
+        /* Full width button on mobile */
+    }
+
+    .feature-section {
+        padding: 40px 20px;
+        /* Reduced section padding */
+    }
+
+    .feature-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer-cols {
+        grid-template-columns: 1fr;
+        /* 1 column for footer links */
+        text-align: left;
+    }
+}
+
 /* --- СЕКЦИИ С КОНТЕНТОМ --- */
 
 /* Серая полоса-разделитель (как у Netflix) */
