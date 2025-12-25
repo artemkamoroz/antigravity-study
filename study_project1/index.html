@@ -218,6 +218,24 @@
                     </div>
                 </a>
 
+                <!-- Project 6: Password Generator -->
+                <a href="../study_project6/index.html" class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #10b981, #0f172a);">
+                        <span class="project-icon">🔐</span>
+                    </div>
+                    <div class="project-info">
+                        <h3>Password Generator</h3>
+                        <p>Secure password tool. Features custom length slider, character toggles, and one-click
+                            clipboard copy.</p>
+                        <div class="tags">
+                            <span>JS Logic</span>
+                            <span>Clipboard API</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <span class="btn-link">Generate →</span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
@@ -236,15 +254,15 @@
                 </div>
             </div>
 
-            <form class="contact-form">
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/xgowjbjj" method="POST">
                 <div class="form-group">
-                    <input type="text" placeholder="Name" required>
+                    <input type="text" name="name" placeholder="Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message 🚀</button>
             </form>

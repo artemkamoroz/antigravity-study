@@ -56,6 +56,11 @@ body {
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+    width: 100%;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 /* Background ambient glow */
@@ -226,6 +231,17 @@ h1 {
 .card:nth-child(5) {
     opacity: 0;
     animation: fadeInUp 1s ease-out 1.0s forwards;
+}
+
+.card:nth-child(6) {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.2s forwards;
+}
+
+/* Ensure future cards are visible immediately (or add more delays if needed) */
+.card:nth-child(n+7) {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.4s forwards;
 }
 
 footer {

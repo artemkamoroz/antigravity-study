@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator | Portfolio Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="generator-card">
+            <h1>Password Generator</h1>
+            <div class="result-container">
+                <span id="result">CLICK GENERATE</span>
+                <button class="btn" id="clipboard">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+            <div class="settings">
+                <div class="setting">
+                    <label>Password Length</label>
+                    <span id="length-val">16</span>
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="length" min="4" max="32" value="16">
+                </div>
+
+                <div class="setting">
+                    <label>Include Uppercase</label>
+                    <input type="checkbox" id="uppercase" checked>
+                </div>
+                <div class="setting">
+                    <label>Include Lowercase</label>
+                    <input type="checkbox" id="lowercase" checked>
+                </div>
+                <div class="setting">
+                    <label>Include Numbers</label>
+                    <input type="checkbox" id="numbers" checked>
+                </div>
+                <div class="setting">
+                    <label>Include Symbols</label>
+                    <input type="checkbox" id="symbols" checked>
+                </div>
+            </div>
+            <button class="btn btn-large" id="generate">
+                Generate Password
+            </button>
+        </div>
+        <a href="#" onclick="history.back(); return false;" class="back-link"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
