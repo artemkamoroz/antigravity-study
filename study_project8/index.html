@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoExchange | Top 30</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="glass-container">
+        <!-- Header -->
+        <header>
+            <h1>Crypto<span class="neon-text">Exchange</span></h1>
+            <p>Real-time rates form CoinGecko API</p>
+        </header>
+
+        <!-- Converter -->
+        <div class="converter-box">
+
+            <div class="input-group">
+                <label>Amount</label>
+                <div class="input-wrapper">
+                    <input type="number" id="amount" value="1" min="0">
+                    <div class="spinner-btns">
+                        <button class="step-btn" id="step-up"><i class="fas fa-chevron-up"></i></button>
+                        <button class="step-btn" id="step-down"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="currency-group">
+                <div class="select-box">
+                    <label>From</label>
+                    <div class="custom-dropdown" id="from-dropdown">
+                        <div class="selected-option" data-value="bitcoin">BTC</div>
+                        <div class="options-list" id="from-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swap-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+
+                <div class="select-box">
+                    <label>To</label>
+                    <div class="custom-dropdown" id="to-dropdown">
+                        <div class="selected-option" data-value="usd">USD</div>
+                        <div class="options-list" id="to-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="result-box">
+                <p id="exchange-rate">1 BTC = ... USD</p>
+                <h2 id="final-amount">Loading...</h2>
+            </div>
+
+            <button id="convert-btn">Convert Now</button>
+        </div>
+
+        <a href="#" onclick="history.back(); return false;" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+    </div>
+
+    <!-- Live Ticker Footer -->
+    <div class="ticker-wrap">
+        <div class="ticker" id="ticker-content">
+            <!-- Ticker items will be injected here -->
+            <div class="ticker-item">Loading Market Data...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
