@@ -24,9 +24,12 @@ body {
     justify-content: center;
     align-items: center;
     /* Grid Background Pattern */
+    /* Grid Background Pattern & Optimized Image */
+    background-color: var(--bg-dark);
     background-image:
         linear-gradient(rgba(5, 5, 16, 0.9), rgba(5, 5, 16, 0.9)),
-        url("https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop");
+        url("https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=60&w=1200&auto=format&fit=crop");
+    /* Smaller Width & Quality */
     background-size: cover;
     background-position: center;
     overflow: hidden;

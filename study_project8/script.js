@@ -34,23 +34,20 @@ const fallbackData = [
 
 // Fetch Top 30 Coins from CoinGecko
 const fetchCryptoData = async () => {
+    // 1. OPTIMISTIC LOAD: Show fallback data IMMEDIATELY
+    // This ensures no "hanging" or empty UI ever.
+    cryptoData = fallbackData;
+    populateDropdowns(fallbackData);
+    updateTicker(fallbackData);
+    convertCurrency();
+
     // Top 30 coins by market cap, vs USD
     const apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=false";
 
-    // Fallback load function
-    const loadFallback = () => {
-        console.log("Using Fallback Data");
-        cryptoData = fallbackData;
-        populateDropdowns(fallbackData);
-        updateTicker(fallbackData);
-        convertCurrency();
-        resultRate.innerText = "Simulated Mode (API limit)";
-    };
-
     try {
-        // 3 second timeout protection
+        // Try to get live data
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        const timeoutId = setTimeout(() => controller.abort(), 2000); // 2s to fetch live
 
         const response = await fetch(apiURL, { signal: controller.signal });
         clearTimeout(timeoutId);
@@ -58,14 +55,18 @@ const fetchCryptoData = async () => {
         if (!response.ok) throw new Error("API Limit");
 
         const data = await response.json();
-        cryptoData = data;
 
+        // 2. LIVE UPDATE: Overwrite with fresh data if successful
+        console.log("Live data received!");
+        cryptoData = data;
         populateDropdowns(data);
         updateTicker(data);
-        convertCurrency(); // Initial conversion
+        convertCurrency();
+
     } catch (error) {
-        console.error("Error fetching data, switching to fallback:", error);
-        loadFallback();
+        console.log("Using cached/fallback data due to:", error);
+        // UI is already populated with fallback data, just notify user
+        resultRate.innerHTML += ` <span style="font-size: 0.8em; opacity: 0.7">(Offline Mode)</span>`;
     }
 };
 
@@ -83,7 +84,7 @@ const populateDropdowns = (data) => {
             });
         } else {
             const symbol = coin.symbol.toUpperCase();
-            item.innerHTML = `<img src="${coin.image}" alt=""> ${symbol}`;
+            item.innerHTML = `<img src="${coin.image}" alt="" loading="lazy"> ${symbol}`;
             item.addEventListener("click", () => {
                 selectOption(coin.id, symbol, selectedElement, listElement, isTo);
             });
@@ -152,7 +153,12 @@ const convertCurrency = () => {
     }
 
     // Calculation
-    if (toPriceUSD === 0) return; // Divide by    // Proper formatting function to avoid scientific notation on large numbers
+    if (toPriceUSD === 0) return;
+
+    // Calculation
+    const result = (amount * fromPriceUSD) / toPriceUSD;
+
+    // Proper formatting function to avoid scientific notation on large numbers
     const formatValue = (val) => {
         if (val > 1) {
             return val.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -221,10 +227,8 @@ const handleStep = (direction) => {
     }
 
     // Fix floating point errors (e.g. 0.1 + 0.2 = 0.30000004)
-    // If step is decimal (0.1), fix to 1 decimal. If integer, no fix needed.
-    if (step < 1) {
-        currentVal = parseFloat(currentVal.toFixed(2));
-    }
+    // Applies to all step sizes to prevent artifacts like 0.1999999
+    currentVal = parseFloat(currentVal.toFixed(8));
 
     amountInput.value = currentVal;
     convertCurrency();
@@ -265,3 +269,6 @@ swapIcon.addEventListener("click", () => {
 
     convertCurrency();
 });
+
+// Initialize App
+window.addEventListener("load", fetchCryptoData);
