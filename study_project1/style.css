@@ -56,7 +56,10 @@ header {
     color: var(--text-secondary);
     font-size: 1.2rem;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+    padding: 5px;
+    /* Increase hit area */
 }
 
 .btn-back:hover {
