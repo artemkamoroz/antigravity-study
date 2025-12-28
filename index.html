@@ -1,88 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artem Morozov | Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Artem Moroz | Antigravity Study</title>
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-color: #0071e3;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .project-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+
+        .project-link {
+            font-weight: 600;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .badge.react {
+            background: #e1f5fe;
+            color: #0277bd;
+        }
+
+        .badge.html {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .badge.node {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+    </style>
 </head>
 
 <body>
-    <button class="theme-toggle" id="theme-toggle">☀️</button>
-    <div class="hero">
-        <h1>Artem Morozov</h1>
-        <p class="subtitle">Frontend Developer & Creative Coder.<br>Building digital experiences with passion and
-            precision.</p>
-    </div>
 
     <div class="container">
-        <!-- Project 1 -->
-        <a href="study_project1/index.html" class="card">
-            <h2>Personal Site</h2>
-            <p>A responsive personal website showcasing goals and early experiments. Built with pure HTML & CSS.</p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
+        <header>
+            <h1>Antigravity Study</h1>
+            <p class="subtitle">Путь к профессиональной веб-разработке</p>
+        </header>
 
-        <!-- Project 2 -->
-        <a href="study_project2/index.html" class="card">
-            <h2>Netflix Clone</h2>
-            <p>A pixel-perfect recreation of the Netflix landing page, featuring advanced CSS styling and interactivity.
-            </p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
+        <div class="grid">
+            <!-- iStore Pro -->
+            <a href="https://github.com/artemkamoroz/antigravity-study/tree/main/study_project10" class="card">
+                <div>
+                    <div class="project-tag">Study Project 10</div>
+                    <div class="project-title">iStore Pro</div>
+                    <p class="project-desc">
+                        Полноценный e-commerce магазин техники Apple. React, Supabase, Stripe, Node.js Backend.
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <span class="badge react">React</span>
+                        <span class="badge node">Node.js</span>
+                    </div>
+                </div>
+                <div class="project-link">
+                    Смотреть код на GitHub &rarr;
+                    <!-- Replace with Vercel URL once deployed -->
+                </div>
+            </a>
 
-        <!-- Project 3 -->
-        <a href="study_project3/index.html" class="card">
-            <h2>To-Do List App</h2>
-            <p>Interactive task manager with persistent storage. Built with Vanilla JS to master DOM manipulation.</p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
+            <!-- Todo App -->
+            <a href="https://github.com/artemkamoroz/antigravity-study/tree/main/study_project9" class="card">
+                <div>
+                    <div class="project-tag">Study Project 9</div>
+                    <div class="project-title">React Todo App</div>
+                    <p class="project-desc">
+                        Первое приложение на React. Список задач с сохранением состояния.
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <span class="badge react">React</span>
+                    </div>
+                </div>
+                <div class="project-link">Смотреть код &rarr;</div>
+            </a>
 
-        <!-- Project 4 -->
-        <a href="study_project4/index.html" class="card">
-            <h2>Weather App</h2>
-            <p>Real-time weather dashboard using Open-Meteo API. Features async/await fetch and glassmorphism UI.</p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
+            <!-- First Website -->
+            <a href="./study_project1/index.html" class="card">
+                <div>
+                    <div class="project-tag">Study Project 1</div>
+                    <div class="project-title">Мой первый сайт</div>
+                    <p class="project-desc">
+                        Многостраничный сайт о себе. Основы HTML и CSS.
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <span class="badge html">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="project-link">Открыть сайт &rarr;</div>
+            </a>
 
-        <!-- Project 5 -->
-        <a href="study_project5/index.html" class="card">
-            <h2>Quiz App</h2>
-            <p>Interactive knowledge test with score tracking and dynamic DOM manipulation. Built with JS.</p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
+            <!-- Netflix Clone -->
+            <a href="./study_project2/index.html" class="card">
+                <div>
+                    <div class="project-tag">Study Project 2</div>
+                    <div class="project-title">Netflix Clone</div>
+                    <p class="project-desc">
+                        Пиксель-перфект копия лендинга Netflix.
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <span class="badge html">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="project-link">Открыть сайт &rarr;</div>
+            </a>
 
+            <!-- Crypto App -->
+            <!-- Note: Assuming Project 8 was the crypto one based on context, or listing generic -->
+            <a href="./study_project8/index.html" class="card">
+                <div>
+                    <div class="project-tag">Study Project 8</div>
+                    <div class="project-title">Crypto Converter</div>
+                    <p class="project-desc">
+                        Конвертер валют с реальным API.
+                    </p>
+                    <div style="margin-bottom: 15px;">
+                        <span class="badge html">JS / API</span>
+                    </div>
+                </div>
+                <div class="project-link">Открыть сайт &rarr;</div>
+            </a>
 
-        <!-- Project 6 -->
-        <a href="study_project6/index.html" class="card">
-            <h2>Password Generator</h2>
-            <p>Secure password tool with custom length, character options, and one-click copy to clipboard.</p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
+        </div>
 
-        <!-- Project 7 -->
-        <!-- Project 7 -->
-        <a href="study_project7/index.html" class="card">
-            <h2>Movie Search App</h2>
-            <p>Find movies, view ratings and plots using OMDb API. Features cinematic dark mode.</p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
-
-        <!-- Project 8 -->
-        <a href="study_project8/index.html" class="card">
-            <h2>Crypto Converter</h2>
-            <p>Real-time crypto rates (Top 30) using CoinGecko API. Cyberpunk neon design.</p>
-            <span class="card-arrow">View Project &rarr;</span>
-        </a>
+        <footer style="margin-top: 80px; text-align: center; color: var(--text-secondary);">
+            <p>&copy; 2025 Artem Moroz. Code hosted on GitHub.</p>
+        </footer>
     </div>
 
-    <footer>
-        &copy; 2025 Artem Morozov. All rights reserved.
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
