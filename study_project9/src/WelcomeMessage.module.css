@@ -1,0 +1,31 @@
+.card {
+    background: #1e1e1e;
+    padding: 2em;
+    border-radius: 12px;
+    border: 1px solid #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 250px;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: #646cff;
+}
+
+.greeting {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.description {
+    color: #888;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #a481ff;
+    font-weight: 600;
+}

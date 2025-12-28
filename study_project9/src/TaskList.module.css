@@ -1,0 +1,53 @@
+.container {
+    margin-top: 2rem;
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #a481ff;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    padding: 0.8em 1em;
+    border-bottom: 1px solid #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item:hover {
+    background: #222;
+}
+
+.icon {
+    font-size: 0.9em;
+}
+
+.note {
+    margin-top: 1.5rem;
+    font-size: 0.85em;
+    color: #666;
+    text-align: center;
+}

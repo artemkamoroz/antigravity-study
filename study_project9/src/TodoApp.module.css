@@ -1,0 +1,106 @@
+.container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #1e1e1e;
+    border-radius: 16px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #646cff;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.inputGroup {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #121212;
+    color: white;
+    font-size: 1rem;
+}
+
+.input:focus {
+    border-color: #646cff;
+    outline: none;
+}
+
+.addButton {
+    padding: 0 20px;
+    background: #646cff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.addButton:hover {
+    opacity: 0.9;
+}
+
+.taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #252525;
+    border-radius: 8px;
+    border: 1px solid #333;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.deleteButton {
+    background: transparent;
+    color: #ff4b4b;
+    border: 1px solid #ff4b4b;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.deleteButton:hover {
+    background: #ff4b4b;
+    color: white;
+}
+
+.emptyMsg {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+}
