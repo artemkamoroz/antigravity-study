@@ -143,12 +143,13 @@ app.post('/api/create-checkout-session', async (req, res) => {
             quantity: item.quantity,
         }));
 
+        const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5178';
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: `http://localhost:5178/cart?success=true`,
-            cancel_url: `http://localhost:5178/cart?canceled=true`,
+            success_url: `${FRONTEND_URL}/cart?success=true`,
+            cancel_url: `${FRONTEND_URL}/cart?canceled=true`,
             metadata: { userId },
         });
 
@@ -177,11 +178,17 @@ app.post('/api/orders', async (req, res) => {
     res.json({ success: true, message: 'Order simulated (Local Mode)' });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:${PORT}`);
-    if (!supabase) {
-        console.log('⚠️ Running in LOCAL MODE. Database integration is ready but waiting for credentials in .env');
-    } else {
-        console.log('🚀 Cloud Mode ACTIVE. Connected to Supabase.');
-    }
-});
+// Start Server (Only if run directly, not when importing for Vercel)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server is listening on http://localhost:${PORT}`);
+        if (!supabase) {
+            console.log('⚠️ Running in LOCAL MODE. Database integration is ready but waiting for credentials in .env');
+        } else {
+            console.log('🚀 Cloud Mode ACTIVE. Connected to Supabase.');
+        }
+    });
+}
+
+// Export for Vercel
+module.exports = app;
